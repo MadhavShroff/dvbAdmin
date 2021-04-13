@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.3.0, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.3.0, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="Admin page for dvbDesign">
+  
+  <title>dvbAdmin</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <script type="module" src="assets/require/require.js"></script>
+  <script type="module" src="assets/qrscanner/qr-scanner-worker.min.js"></script>
+  <script type="module" src="assets/qrscanner/qr-scanner.min.js"></script>
+  <script type="module" src="scripts/index.js"></script>
+
+</head>
+<body style="background-color: #ffe161;">
+  <section class="features4 cid-steWLYwdfv" id="features4-4">
+    <div class="container-fluid">
+        <div class="mbr-section-head">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-1">Admin Page</h4>
+        </div>
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-md-6 p-2">
+                    <div class="card">
+                        <div class="item-wrapper">
+                            <div class="item-content">
+                                <h5 class="item-title mbr-fonts-style display-5"><strong>Search By ID</strong></h5>
+                                <p class="mbr-text mbr-fonts-style mt-3 display-7">Search by Employee or Task by ID or Scan QR code</p>
+                                <div class="input-group mb-3 mr-3">
+                                    <input type="text" class="form-control" placeholder="Task ID" style="height: fit-content;">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-primary" type="button" style="margin: 0px; box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;">Submit</button>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3 mr-3">
+                                    <input type="text" class="form-control" placeholder="Employee ID" style="height: fit-content;">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-primary" type="button" style="margin: 0px; box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;">Submit</button>
+                                    </div>
+                                </div>
+                                <button type="submit" id="startScan" class="btn btn-primary" style="height: fit-content; margin: 1rem 0;">Scan Code<img src="assets/images/QR.png" style="width: 35px; height: 35px; padding: 5px;"></i></button>
+                                <br/>
+                                <video id="preview" class="border-gray border" style="margin: 1rem 0; width: 100%;display: none;"></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4 p-2">
+                    <div class="card mx-auto">
+                        <div class="item-wrapper">
+                            <div class="item-content">
+                                <h5 class="item-title mbr-fonts-style display-5"><strong>Search Employee By ID</strong></h5>
+                                <form>
+                                    <div class="form-group">
+                                      <input type="search" class="form-control" id="empID"aria-describedby="empIDHelp" placeholder="Employee ID">
+                                    </div>
+                                    <div class="form-group">
+                                      <input type="password" class="form-control" id="empPass" name="password" placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" style="height: fit-content; margin-bottom: 1em;">Login</button>
+                                  </form>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-md-6 p-2">
+                    <div class="card">
+                        <div class="item-wrapper">
+                            <div class="item-content">
+                                <h5 class="item-title mbr-fonts-style display-5"><strong>Admin Login</strong></h5>
+                                <p class="mbr-text mbr-fonts-style mt-3 display-7">Login to create and assign Tasks</p>
+                                <div class="input-group mb-3 mr-3">
+                                    <input type="text" id="adminId" class="form-control" placeholder="Username" style="height: fit-content;">
+                                </div>
+                                <div class="input-group mb-3 mr-3">
+                                    <input type="text" id="adminPass" class="form-control" placeholder="Password" style="height: fit-content;">
+                                </div>
+                                <button type="submit" id="adminSubmit" class="btn btn-primary" style="height: 58px; margin: 1rem 0;">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      $("#adminSubmit").click((e) => {
+        e.preventDefault();
+        fetch("/v1/auth/login", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ "email": $("#adminId").val(), "password" : $("#adminPass").val() })
+        }).then(response => {
+            if(response.status !== 200) {
+                console.log("Error: Status code: " + response.status);
+                console.log(response);
+                if(response.status === 401) {
+                    alert("Invalid Credentials");
+                }
+                return;
+            } // On Success
+            response.json().then( data => {
+                if(data.user) window.location = `admin/${data.user.userID}`;
+            })
+        }).catch( err => {
+            console.log('Fetch Error :-S', err);
+        })
+      });
+    </script>
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
